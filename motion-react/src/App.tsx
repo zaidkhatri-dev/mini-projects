@@ -1,6 +1,8 @@
+import FootballCard from "./projects/football-cards/FootballCard";
+
 const App = () => {
   return (
-    <div className="h-screen flex-col gap-8 flex justify-center items-center"></div>
+    <FootballCard />
   );
 };
 
