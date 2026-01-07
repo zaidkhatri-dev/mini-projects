@@ -41,33 +41,35 @@ const MoveMe = () => {
   }, []);
 
   return (
-    <div className=" bg-[url(/move-me/background.jpg)] w-3/4 h-105 relative">
-      <h1 className="text-2xl ml-2 mt-1 text-white font-semibold">
-        X - {posX}
-      </h1>
-      <motion.img
-        id="character"
-        src="/move-me/character.png"
-        alt="character"
-        className="w-3/10 absolute -left-12 bottom-13"
-        animate={{ x: posX, y: isJumping ? [0, -40, 0] : 0 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ opacity: 0.6 }}
-        transition={{
-          x: {
-            type: "spring",
-            stiffness: 300,
-            damping: 25,
-          },
-          y: {
-            duration: 0.8,
-            ease: "easeOut",
-          },
-        }}
-        onAnimationComplete={() => {
-          setIsJumping(false);
-        }}
-      />
+    <div className="h-screen flex-col gap-8 flex justify-center items-center">
+      <div className=" bg-[url(/move-me/background.jpg)] w-3/4 h-105 relative">
+        <h1 className="text-2xl ml-2 mt-1 text-white font-semibold">
+          X - {posX}
+        </h1>
+        <motion.img
+          id="character"
+          src="/move-me/character.png"
+          alt="character"
+          className="w-3/10 absolute -left-12 bottom-13"
+          animate={{ x: posX, y: isJumping ? [0, -40, 0] : 0 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ opacity: 0.6 }}
+          transition={{
+            x: {
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+            },
+            y: {
+              duration: 0.8,
+              ease: "easeOut",
+            },
+          }}
+          onAnimationComplete={() => {
+            setIsJumping(false);
+          }}
+        />
+      </div>
     </div>
   );
 };
