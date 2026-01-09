@@ -70,6 +70,7 @@ const MoveMe = () => {
           }}
         />
       </div>
+      <p className="text-2xl">Use <span className="bg-red-600 rounded text-white px-2 py-1">Arrow Keys</span> to move and <span className="bg-red-600 rounded text-white px-2 py-1">Space</span> to jump</p>
     </div>
   );
 };
