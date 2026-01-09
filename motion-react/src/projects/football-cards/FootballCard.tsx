@@ -71,15 +71,15 @@ const FootballCard = () => {
         <motion.div
           layoutId={`card-${current.name}`}
           ref={ref}
-          className="fixed inset-0 z-20 overflow-auto border-neutral-500 border rounded-2xl scroll-auto flex flex-col items-center gap-5 pb-6 max-w-175 max-h-[550px] p-4 m-auto bg-neutral-100"
+          className="fixed inset-0 z-20 border-neutral-500 border rounded-2xl flex flex-col items-center gap-5 pb-6 max-w-175 aspect-video p-4 m-auto bg-neutral-100"
         >
           <video
-            muted
-            src={current.videoUrl}
             autoPlay
             height={360}
             width={640}
-          ></video>
+          >
+            <source src={current.videoUrl} type="video/mp4"/>
+          </video>
           <div className="flex flex-col gap-2">
             <motion.h1
               className="text-2xl font-medium"
@@ -88,7 +88,7 @@ const FootballCard = () => {
               {current.name}
             </motion.h1>
             <motion.p
-              className="text-neutral-600 [mask-image:linear-gradient(to_top,transparent_20%,black_80%)]"
+              className="text-neutral-600"
               initial={{ filter: "blur(10px)", opacity: 0 }}
               animate={{ filter: "blur(0px)", opacity: 1 }}
               transition={{ delay: 0.2 }}
